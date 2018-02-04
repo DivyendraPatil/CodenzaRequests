@@ -1,0 +1,64 @@
+// Please provide solution for following problem :
+// Write Java program to find product of the given series 3,7,11,15,19....upto less than 100 using for loop.
+class Untitled {
+	public static void main(String[] args) {
+		long i,product=1;
+		for (i=3;i<100;i=i+4) {
+			System.out.println(i);
+			product = product * i;
+			System.out.println("Product = "+product);
+		}
+	}
+}
+/*
+OP:
+3
+Product = 3
+7
+Product = 21
+11
+Product = 231
+15
+Product = 3465
+19
+Product = 65835
+23
+Product = 1514205
+27
+Product = 40883535
+31
+Product = 1267389585
+35
+Product = 44358635475
+39
+Product = 1729986783525
+43
+Product = 74389431691575
+47
+Product = 3496303289504025
+51
+Product = 178311467764705275
+55
+Product = -8639613346650761491
+59
+Product = 6771646611472517279
+63
+Product = 2338622827448901409
+67
+Product = 9113776849399981475
+71
+Product = 1442113727564378165
+75
+Product = -2521934874928947321
+79
+Product = 3681329691418229417
+83
+Product = -8044284865349335861
+87
+Product = 1123491515570741501
+91
+Product = -8442736525319833105
+95
+Product = -8849974735873425487
+99
+Product = -9150527387120197261
