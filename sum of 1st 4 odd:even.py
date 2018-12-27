@@ -15,15 +15,10 @@ print(memo)
 
 for i in range(8):
 	if memo[i] % 2 == 0:
-
 		if (j==4):
-
 			break
-
 		sumeven = sumeven + memo[i]
-
 		print(memo[i])
-
 		j=+1
 
 print("Sum of first 4 even",sumeven)
