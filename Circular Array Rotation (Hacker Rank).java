@@ -26,6 +26,22 @@ public class Solution {
         for(int i=0;i<queries.length;i++){
             resultarray[i] = newar[queries[i]];
         }
+        
+        /*
+        int newarr[] = new int[a.length];
+        int shift = k;
+        int stop = 0;
+
+        for (int i = 0; shift < a.length; i++) {
+            newarr[i] = a[shift];
+            shift++;
+            stop++;
+        }
+
+        for (int i = 0; i < k; i++) {
+            newarr[stop++] = a[i];
+        }
+        */
 
         return resultarray;
     }
