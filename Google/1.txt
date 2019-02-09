@@ -1,0 +1,35 @@
+// you can also use imports, for example:
+import java.util.*;
+
+// you can write to stdout for debugging purposes, e.g.
+// System.out.println("this is a debug message");
+
+class Solution {
+    public int solution(String[] L) {
+        // write your code in Java SE 8
+        Map<String, Integer> count = new HashMap<>();
+        String t;
+        int m = 0;
+        for (String l: L) {
+            t = getLocalStripped(l);
+            Integer c = count.getOrDefault(t, 0) + 1;
+            count.put(t, c);
+            if (m < c) {
+                m = c;
+            }
+        }
+        
+        return m;
+    }
+    
+    public String getLocalStripped(String input) {
+        String[] em = input.split("@");
+        em[0] = em[0].replace(".","");
+        int p = em[0].indexOf("+");
+        if (p > 0) {
+            em[0] = em[0].substring(0, p);
+        }
+        
+        return em[0] + em[1];
+    }
+}

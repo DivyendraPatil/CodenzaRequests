@@ -1,0 +1,27 @@
+// you can also use imports, for example:
+import java.util.*;
+
+// you can write to stdout for debugging purposes, e.g.
+// System.out.println("this is a debug message");
+
+class Solution {
+    public int solution(int[] coupons) {
+        // write your code in Java SE 8
+        Map<Integer, Integer> pos = new HashMap<>();
+        int d = -2;
+        int N = coupons.length;
+        int p,c,cp;
+        for (int i=0; i < N; i++) {
+            c = coupons[i];
+            p = pos.getOrDefault(c, i);
+            if (p!=i) {
+                cp = i-p;
+                if (cp < d || d == -2) {
+                    d = cp;
+                }
+            }
+            pos.put(c,i);
+        }
+        return d+1;
+    }
+}
