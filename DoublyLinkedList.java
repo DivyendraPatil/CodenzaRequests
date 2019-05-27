@@ -87,6 +87,63 @@ class DoublyLinkedList {
 		}
 	}
 	
+	void deleteNodeAtPosition(int position){
+		if (position == 0) {
+			head = head.next;
+			head.previous = null;
+		} else {
+			Node current = head;
+			for (int i = 1; current!=null && i<position; i++) {
+				current = current.next;
+			}
+			if (current.next!=null) {
+				current.next.previous = current.previous;
+				current.previous.next = current.next;
+			} else {
+				current.previous.next = null;
+			}
+		}
+	}
+	
+	// From sorted
+	void removeDuplicates(){
+		Node current = head;
+		if (current==null) {
+			return;
+		}
+		while (current.next!=null && current.next.next!=null) {
+			if (current.data == current.next.data) {
+				current = current.next;
+				current.next.previous = current.previous;
+				current.previous.next = current.next;
+			}
+			current = current.next;
+		}
+	}
+	
+	// From unsorted DLL, use hashset and do operations similar to SLL
+	
+	void deleteAllOccurOfX(int value){
+		Node current = head;
+		while (current!=null) {
+			if (current.data == value) {
+				// If it is the first element
+				if (current.previous == null) {
+					head = head.next;
+					head.previous = null;
+				}
+				// If it is the last element
+				if (current.next == null) {
+					current.previous.next = null;
+				} else {
+					current.next.previous = current.previous;
+					current.previous.next = current.next;
+				}
+			}
+			current = current.next;
+		}
+	}
+	
 	void reverse(){
 		Node current = head;
 		Node temp = null;
@@ -201,6 +258,7 @@ class DoublyLinkedList {
 			new_node.previous = current; 			
 		}
 	}
+
 	
 	public static void main(String[] args) {
 		DoublyLinkedList dll = new DoublyLinkedList();
@@ -219,6 +277,13 @@ class DoublyLinkedList {
 		dll.swapKthElement(2);
 		dll.insertSorted(8);
 		dll.insertSorted(8);
+		dll.insertSorted(8);
+		dll.deleteNodeAtPosition(8);
+		dll.removeDuplicates();
+		dll.deleteAllOccurOfX(8);
+		dll.deleteAllOccurOfX(9);
+		dll.insertAtEnd(8);
+		dll.insertAtEnd(9);
 		dll.printList();
 		dll.pairSum(7);
 		
