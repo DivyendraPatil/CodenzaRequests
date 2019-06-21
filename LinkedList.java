@@ -1,5 +1,5 @@
 import java.util.*;
-
+import java.util.Stack;
 class LinkedList {
 	Node head;
 	
@@ -246,7 +246,7 @@ class LinkedList {
 		System.out.println("Size of the loop is "+count);
 	}
 //====================================================================	
-/*	void palindrome(){
+	void palindrome(){
 		Node current = head;
 		
 		Stack <Integer> stack = new Stack<>();
@@ -263,7 +263,7 @@ class LinkedList {
 			}
 			current = current.next;
 		}
-	} */
+	}
 //====================================================================	
 	// From sorted LL
 	void removeDuplicates1(){
