@@ -46,9 +46,9 @@ class ListofList {
 		}
 			
 		System.out.println(lsls3);
-		for (int i = 0; i < lsls3.size(); i++) {
-			Collections.sort(lsls3.get(i));
-		}
+		//for (int i = 0; i < lsls3.size(); i++) {
+			lsls3.sort();
+		//}
 		System.out.println(lsls3);
 	}
 }
